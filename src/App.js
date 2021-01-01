@@ -13,8 +13,8 @@ import Footer from './components/footer.component';
 function App() {
   return (
     <div className="container">
-      <Navbar />
       <Router>
+      <Navbar />
         <div className="container">
           <br />
           <Route path="/" exact component={HomePage} />
