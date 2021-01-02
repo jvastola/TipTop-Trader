@@ -14,13 +14,12 @@ function App() {
   return (
     <div className="container">
       <Router>
-      <Navbar />
         <div className="container">
           <br />
           <Route path="/" exact component={HomePage} />
           <Route path="/login" component={LoginPage} />
           <Route path="/register" component={SignupPage} />
-          <Route path="/user/:id" component={UserView} />
+          <Route path="/user:id" component={UserView} />
       </div>
       </Router>
       <Footer />

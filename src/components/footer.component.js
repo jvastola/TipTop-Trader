@@ -5,7 +5,7 @@ export default class Footer extends Component {
   render() {
     return (
         <div>
-          <p>You are on the Exercises List component!</p>
+          <p>Created by Johnathan Vastola</p>
         </div>
     );
   }
