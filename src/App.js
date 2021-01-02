@@ -2,11 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
-import HomePage from './pages/HomePage'
-import LoginPage from './pages/LoginPage'
-import SignupPage from './pages/SignupPage'
-import UserView from './pages/UserView'
-import Navbar from './components/navbar.component'
+import HomePage from './components/pages/HomePage'
+import LoginPage from './components/pages/LoginPage'
+import SignupPage from './components/pages/SignupPage'
+import UserView from './components/pages/UserView'
 import Footer from './components/footer.component';
 
 

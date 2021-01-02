@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 
 
 export default class HomePage extends Component {
@@ -16,9 +15,9 @@ export default class HomePage extends Component {
         <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
           <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
+              <a href="/">
                 <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"></img>
+                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="img"/>
               </a>
               <div class="-mr-2 flex items-center md:hidden">
                 <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
@@ -31,8 +30,8 @@ export default class HomePage extends Component {
             </div>
           </div>
           <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Company</a>
+            <a href="/" class="font-medium text-gray-500 hover:text-gray-900">Features</a>
+            <a href="/" class="font-medium text-gray-500 hover:text-gray-900">Company</a>
             <a href="/login" class="font-medium text-indigo-600 hover:text-indigo-500">Log in</a>
           </div>
         </nav>
@@ -55,16 +54,16 @@ export default class HomePage extends Component {
           </div>
           <div role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
             <div class="px-2 pt-2 pb-3 space-y-1" role="none">
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Product</a>
+              <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Product</a>
 
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Features</a>
+              <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Features</a>
 
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Marketplace</a>
+              <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Marketplace</a>
 
-              <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Company</a>
+              <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50" role="menuitem">Company</a>
             </div>
             <div role="none">
-              <a href="#" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100" role="menuitem">
+              <a href="/" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100" role="menuitem">
                 Log in
               </a>
             </div>
