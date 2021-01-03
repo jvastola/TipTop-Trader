@@ -17,7 +17,7 @@ export default class UserView extends Component {
         return (
             <div>
                 <div>
-                    <Graph />
+                    <Graph tag="GOOGL"/>
                     <h1>Balance =  {this.state.balance}</h1>
                     <div>stock graph
                     </div>

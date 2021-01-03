@@ -37,19 +37,6 @@ export default class Graph extends Component {
 
     }    
   }
-  componentWillReceiveProps(nextProps) {
-    this.setState({ company: undefined, dataPoints: [] }, () => {
-      if (nextProps.data) {
-        this.updateData(nextProps.data);
-      } else if (nextProps.tag) {
-        fetchCompanyDaily(nextProps.tag).then(
-          res => {
-            this.updateData(Object.entries(res.data)[0]);
-          }
-        );
-      }
-    });
-  }  
   async updateData(props = this.props.data) {
     await this.setState({ company: props });
     if (this.state.company) {
@@ -59,7 +46,6 @@ export default class Graph extends Component {
             x: new Date(this.state.company[1].chart[i].date),
             y: this.state.company[1].chart[i].close
           }])
-
 
         })
       }
