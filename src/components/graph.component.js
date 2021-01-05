@@ -7,7 +7,36 @@ import {concat} from 'lodash';
 const iexKey = require("../keys").iexKey;
 
 
-
+var options = {
+  maintainAspectRatio: false,
+  responsive: true,
+  tooltips: {enabled: false},
+  layout: {
+    padding: {
+      bottom: 15,
+    },
+  },
+  legend: {
+    display: false,
+  },
+  scales: {
+    xAxes: [
+      {
+        display: false,
+      },
+    ],
+    yAxes: [
+      {
+        display: true,
+      },
+    ],
+  },
+  elements: {
+    point: {
+      radius: 0,
+    },
+  },
+};
 
 const fetchCompanyDaily = tag => {
   return axios({
@@ -26,7 +55,7 @@ export default class Graph extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { company: undefined, datasets: [] }
+    this.state = { company: undefined, datasets: [], companyname: undefined }
   }
   
   componentDidMount() {
@@ -45,7 +74,7 @@ export default class Graph extends Component {
   async updateData(props = this.props.data) {
     let datasetsdata = [];
     let datasetslabels = [];
-    await this.setState({ company: props });
+    await this.setState({ company: props,companyname:props[0] });
     if (this.state.company) {
       for (let i = 0; i < this.state.company[1].chart.length; i++) { 
           datasetsdata.push(this.state.company[1].chart[i].close)
@@ -63,20 +92,15 @@ export default class Graph extends Component {
     }
   }
 
-
   render(
-    data = this.state.datasets
-    //data = {
- // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
- // datasets: [ {data: [65, 59, 80, 81, 56, 55, 40]}]
-//}
+    
   ) {
-
-    console.log(data)
     return (
       <div>
-        <p>Stock Graph</p>
-        <Line data={data}/>
+
+        <p>Stock Graph :  { this.state.companyname ? this.state.companyname : "Graph Unavaliable API Limit Reached "} </p>
+      
+           <Line data={this.state.datasets} options = {options} /> 
       </div>
     );
   }
