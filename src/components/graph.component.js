@@ -3,6 +3,7 @@ import React, { Component ,useEffect, useState } from 'react';
 
 import axios from 'axios';
 import { Line } from "react-chartjs-2";
+import {concat} from 'lodash';
 const iexKey = require("../keys").iexKey;
 
 
@@ -25,7 +26,7 @@ export default class Graph extends Component {
   
   constructor(props) {
     super(props);
-    this.state = { company: undefined, datalabel: [], datadata: [] }
+    this.state = { company: undefined, datasets: [] }
   }
   
   componentDidMount() {
@@ -52,8 +53,11 @@ export default class Graph extends Component {
       }
       this.setState(
         {
-          datadata: [datasetsdata],
-          datalabel: [datasetslabels]
+          datasets: {
+            datasets: [{data: datasetsdata}],
+            labels: datasetslabels
+            
+          }
         }
       )
     }
@@ -61,15 +65,17 @@ export default class Graph extends Component {
 
 
   render(
-    data = this.state.dataPoints
-//data = {
+    data = this.state.datasets
+    //data = {
  // labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
  // datasets: [ {data: [65, 59, 80, 81, 56, 55, 40]}]
 //}
   ) {
+
+    console.log(data)
     return (
       <div>
-        <p>Stock Graph{this.state.dataPoints[0]}</p>
+        <p>Stock Graph</p>
         <Line data={data}/>
       </div>
     );
