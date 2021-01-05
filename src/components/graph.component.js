@@ -1,19 +1,18 @@
 
-import React, { Component ,useEffect, useState } from 'react';
+import React, { Component  } from 'react';
 
 import axios from 'axios';
 import { Line } from "react-chartjs-2";
-import {concat} from 'lodash';
 const iexKey = require("../keys").iexKey;
 
 
 var options = {
-  maintainAspectRatio: false,
+  maintainAspectRatio: true,
   responsive: true,
-  tooltips: {enabled: false},
+  tooltips: {enabled: true},
   layout: {
     padding: {
-      bottom: 15,
+      bottom: 35,
     },
   },
   legend: {
@@ -25,16 +24,6 @@ var options = {
         display: false,
       },
     ],
-    yAxes: [
-      {
-        display: true,
-      },
-    ],
-  },
-  elements: {
-    point: {
-      radius: 0,
-    },
   },
 };
 
@@ -96,10 +85,8 @@ export default class Graph extends Component {
     
   ) {
     return (
-      <div>
-
+      <div className= " w-2/3 " >
         <p>Stock Graph :  { this.state.companyname ? this.state.companyname : "Graph Unavaliable API Limit Reached "} </p>
-      
            <Line data={this.state.datasets} options = {options} /> 
       </div>
     );
